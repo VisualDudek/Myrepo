@@ -13,3 +13,4 @@ print(str is isstr)
 L1 = [1,2,3]
 L2 = [1,2,3]
 print(L1 is L2) #Will print False! The is operator is used to match INSTANCES instead of vars
+

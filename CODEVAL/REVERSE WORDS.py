@@ -7,7 +7,6 @@ with open(sys.argv[1], 'r') as test_cases:
         print(' '.join(L[::-1]))
 '''
 
-
 # INPUT SAMPLE:
 #Hello World
 #Hello CodeEval
