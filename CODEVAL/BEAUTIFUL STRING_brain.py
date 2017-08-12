@@ -69,3 +69,32 @@ for x in sorted(L)[::-1]:
     res += i*x
     i -= 1
 print(res)
+
+print('--------------------')
+
+# D = dict()
+D = {}
+for x in filter(lambda y: y.isalpha(), test.lower()):  # Mozna dać caly string lower !!!
+    D[x] = 1 if x not in D else D[x] + 1    # UWAGA na składnie x = a if condition else b
+res = 0
+# for x in sorted(D.values())[::-1]:
+for i, x in enumerate(sorted(D.values(), reverse=True)):
+    res += (26-i)*x
+    # if x in D:
+    #     D[x] += 1
+    # else:
+    #     D[x] = 1
+print(D)
+print(res)
+
+print('--------------------')
+
+# D = dict()
+D = {}
+for x in filter(lambda y: y.isalpha(), test.lower()):  # Mozna dać caly string lower !!!
+    D[x] = 1 if x not in D else D[x] + 1    # UWAGA na składnie x = a if condition else b
+# res = 0
+# for x in sorted(D.values())[::-1]:
+res = sum((26-i)*x for i, x in enumerate(sorted(D.values(), reverse=True)))
+print(D)
+print(res)

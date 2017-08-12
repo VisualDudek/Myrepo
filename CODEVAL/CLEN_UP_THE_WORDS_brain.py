@@ -21,7 +21,7 @@ with open(sys.argv[1], 'r') as test_cases:
 #Can 0$9 ---you~
 #13What213are;11you-123+138doing7
 
-test = input('INPUT --> ')
+test = '(--9Hello----World...--)'
 L=[]
 for x in test:
     if x.isalpha():
@@ -34,3 +34,13 @@ T = T.split()
 print(T)
 T = ' '.join(T)
 print(T)
+
+print('----------------------') # BRAIN
+# Syntetyczny IF
+
+L = list([' ',x.lower()][x.isalpha()] for x in test)
+print(L)
+print(''.join(L))
+print(''.join(L).split())
+print(' '.join(''.join(L).split()))
+

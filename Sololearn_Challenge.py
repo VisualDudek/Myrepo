@@ -39,7 +39,6 @@ print('--------------------') # ------------------------
 def func(num: int) -> int: #Nie rozumiem jak to działą
     return num
 
-
 print(func(5))
 
 print('--------------------') # ------------------------
@@ -104,3 +103,5 @@ for i in strList:
     finally:
         intList = []
 print(str(len(intList)))
+
+print('--------------------') # ------------------------

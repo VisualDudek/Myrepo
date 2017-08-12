@@ -11,6 +11,6 @@ with open(sys.argv[1], 'r') as test_cases:
 #Hello World
 #Hello CodeEval
 
-test = input('INPUT --> ')
+test = 'Hello World'
 L = test.rsplit()
 print(' '.join(L[::-1]))

@@ -19,7 +19,8 @@ with open(sys.argv[1], 'r') as test_cases:
 #
 # INPUT SAMPLE:
 #
-# The first argument is a path to a file. Each line of the input file contains one test case represented by a sentence.
+# The first argument is a path to a file.
+# Each line of the input file contains one test case represented by a sentence.
 # Each word in the sentence begins and ends with a single digit positive integer i.e. 0 through 9.
 # Assume all characters are ASCII.
 #
