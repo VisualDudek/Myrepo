@@ -1,5 +1,6 @@
 
 # Link List
+from collections import deque
 
 class LinkedNode:
     def __init__(self, value, tail=None):
@@ -108,6 +109,15 @@ class QueueLinkedList:
             return 'queuelink:[]'
 
         return 'queuelink:[' + ','.join(map(str,self)) + ']'
+
+print('----------------------')    # Example for collections.deque
+
+d = deque('Marcin')
+print(d)
+d.append('Z')
+d.appendleft('A')
+print(d)
+
 
 a = LinkedList()
 print(a)
