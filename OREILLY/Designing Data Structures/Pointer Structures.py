@@ -19,6 +19,21 @@ class LinkedList:
         # Add value to the front of the list. O(1)
         self.head = LinkedNode(value, self.head)
 
+    def checkInfinite(self):
+        """Check whether infinite loop via next."""
+        p1 = p2 = self
+        while p1 != None and p2 != None:
+            if p2 == None:
+                return False
+
+            p1 = p1.next
+            p2 = p2.next.next
+
+            if p1 == p2:
+                return True
+
+        return False
+
     def remove(self, value):
         n = self.head
         last = None

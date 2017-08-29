@@ -16,3 +16,7 @@ for i in LLL:
     res = res + ' ' + str(max(L))
 
 print(res.lstrip())
+
+#Uproszczenie
+
+print(' '.join([str(max(map(int,x))) for x in LLL]))
