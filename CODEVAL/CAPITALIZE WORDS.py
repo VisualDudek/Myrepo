@@ -11,6 +11,7 @@ print(' '.join(L))
 # Uproszczenie
 
 L = test.split()
+print(L)
 
 print(' '.join([ x[0].upper()+x[1:] for x in L]))
 

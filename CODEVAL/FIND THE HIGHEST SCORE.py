@@ -20,3 +20,14 @@ print(res.lstrip())
 #Uproszczenie
 
 print(' '.join([str(max(map(int,x))) for x in LLL]))
+
+
+
+test = '72 64 150 | 100 18 33 | 13 250 -6'
+
+L = test.split('|')
+LL = [map(int,i.split()) for i in L]
+LLL = list(zip(*LL))
+
+print(LLL)
+print(' '.join([str(max(map(int,x))) for x in LLL]))

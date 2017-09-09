@@ -16,7 +16,7 @@ for x in test.rstrip().split(','):
 # print(','.join(word_list) + '|' + ','.join(numbers_list))
 
 if len(word_list) == 0 or len(numbers_list) == 0:
-    print(','.join(word_list) + '' + ','.join(numbers_list))
+    print(','.join(word_list) + '' + ','.join(numbers_list)) # UWAGA może byc bez ''
 else:
     print(','.join(word_list) + '|' + ','.join(numbers_list))
 

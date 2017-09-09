@@ -12,7 +12,6 @@ class BinaryNode:
             self.left = self.addToSubTree(self.left, value)
         elif value > self.value:
             self.right = self.addToSubTree(self.right, value)
-        #add right
 
     def addToSubTree(self, parent, value):
         if parent is None:
@@ -118,6 +117,7 @@ class BinaryTree:
         self.inorder(node.right)
 
 
+
 # Własna implementacja Preorder + metoda isEmpty na klasie BinaryNode
 # def preorder_(parent):
 #     print (parent.value)
@@ -151,6 +151,8 @@ def inorder(parent):
         inorder(parent.left)
         print(parent.value)
         inorder(parent.right)
+
+
 
 # ------------------------------------------------
 
