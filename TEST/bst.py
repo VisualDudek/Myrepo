@@ -88,4 +88,4 @@ def TC2():
         print(_)
 
 
-TC2()
+TC1()
