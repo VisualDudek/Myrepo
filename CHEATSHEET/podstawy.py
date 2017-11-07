@@ -42,3 +42,8 @@ from random import random
 trial = lambda : random() > 0.5
 n = 100000
 sum(trial() for _ in range(n)) / n
+
+# - Lambda as key function
+"""You can compare items of two differnt types using key="""
+data = ['1', '100', '111', '2', 2, 2.57]
+print(max(data, key=lambda x: int(x))) #or simply max(data, key=int)
