@@ -5,8 +5,7 @@ from pprint import pprint
 from random import sample
 from typing import Iterable, Tuple, List, Sequence, Dict
 from dis import dis
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+
 
 # Alias dla struktury
 from collections import defaultdict
@@ -42,10 +41,6 @@ def dist(p: Point, q: Point, fsum=fsum, sqrt=sqrt, zip=zip) -> float:
     return sqrt(fsum([(x - y) ** 2 for x, y in zip(p, q)]))
 
 
-# O co chodzi?
-print(dis(dist))
-
-
 def assign_data(centroids: Sequence[Centroid], data: Iterable[Point]) -> Dict[Centroid, List[Point]]:
     """Group the data points to the centroid"""
     d = defaultdict(list)
@@ -53,10 +48,6 @@ def assign_data(centroids: Sequence[Centroid], data: Iterable[Point]) -> Dict[Ce
         closest_centroid = min(centroids, key=partial(dist, point))
         d[closest_centroid].append(point)
     return dict(d)
-
-
-for point in points:
-    print(point, dist(point, (9, 39, 20)))
 
 
 # --- Niesamowity ciąg myślowy
@@ -89,9 +80,7 @@ group = [
     (20, 32, 4),
     (12, 40, 12),
 ]
-pprint(group, width=40)
-list(zip(*group))
-tuple(map(mean, zip(*group)))
+
 
 def transpose(data):
     """Swap the rows and columns in a 2-D array of data"""
@@ -111,39 +100,3 @@ def k_mean(data: Iterable[Point], k: int=2, iterations: int=50) -> List[Centroid
         centroids = compute_centroids(labeled.values())
     return centroids
 
-
-points = [
-    (10, 41, 23),
-    (22, 30, 29),
-    (11, 42, 5),
-    (20, 32, 15),
-    (12, 40, 12),
-    (21, 36, 23),
-]
-
-centroids = k_mean(points, k=2)
-d = assign_data(centroids, points)
-pprint(d, width=45)
-
-# --- Rysujemy
-
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-
-"""Klastry z kolorami"""
-for points, color in zip(d.values(), ['r', 'b']):
-    plot_data = list(zip(*points))
-    """TIP: moża czytelniej i prościej
-    X = plot_data[0]
-    Y = plot_data[1]
-    Z = plot_data[2]
-    """
-    X, Y, Z = plot_data
-    ax.scatter(X, Y, Z, c=color, marker='o')
-
-"""Centroids"""
-for point, color in zip(d.keys(), ['r', 'b']):
-    X, Y, Z = point
-    ax.scatter(X, Y, Z, c=color, marker='*')
-
-plt.show()
